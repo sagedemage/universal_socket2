@@ -4,6 +4,9 @@ use std::io::prelude::*;
 use universal_socket2::{green_message, red_message};
 use std::env;
 
+const SERVER_IPV4_ADDRESS:&str = "127.0.0.1";
+const SERVER_PORT: &str = "6379";
+
 fn main() -> io::Result<()> {
     let msg: String = String::from("Hello");
 
@@ -52,8 +55,9 @@ fn main() -> io::Result<()> {
 }
 
 fn send_message_to_server(message: &[u8]) -> io::Result<()> {
-    //! Sends a message to the server
-    let mut client = TcpStream::connect("127.0.0.1:6379")?;
+    //! Sends a message to the 
+    let server_addr = SERVER_IPV4_ADDRESS.to_owned() + ":" + SERVER_PORT;
+    let mut client = TcpStream::connect(server_addr)?;
 
     client.write(message)?;
 
