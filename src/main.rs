@@ -3,7 +3,7 @@ use std::io::{self};
 use std::io::prelude::*;
 use universal_socket2::green_message;
 
-//const SERVER_IPV4_ADDRESS:&str = "127.0.0.1";
+//const IPV4_ADDRESS:&str = "127.0.0.1";
 const IPV4_ADDRESS:&str = "192.168.1.72";
 const PORT: &str = "6379";
 
