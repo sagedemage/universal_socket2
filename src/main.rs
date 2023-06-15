@@ -1,8 +1,14 @@
+/* Server */
 use std::net::{TcpListener, TcpStream};
 use std::io::{self};
 use std::io::prelude::*;
 use universal_socket2::green_message;
 
+/*	
+* The server address can be changed 
+* - use 127.0.0.1 if you are testing on the loopback address
+* - use server's external address if you are dealing with an external server
+*/
 //const IPV4_ADDRESS:&str = "127.0.0.1";
 const IPV4_ADDRESS:&str = "192.168.1.72";
 const PORT: &str = "6379";
