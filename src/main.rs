@@ -3,11 +3,12 @@ use std::io::{self};
 use std::io::prelude::*;
 use universal_socket2::green_message;
 
+//const SERVER_IPV4_ADDRESS:&str = "127.0.0.1";
+const SERVER_IPV4_ADDRESS:&str = "192.168.1.72";
 const PORT: &str = "6379";
 
 fn main() -> io::Result<()> {
-    let ipv4_addr: String = String::from("127.0.0.1");
-    let addr: String = ipv4_addr + ":" + PORT;
+    let addr: String = SERVER_IPV4_ADDRESS.to_owned() + ":" + PORT;
     let listener: TcpListener = TcpListener::bind(addr)?;
     
     let msg1: String = green_message("Server is running!");
